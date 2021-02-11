@@ -41,3 +41,21 @@ bin_ip = "00001010000000010000000111000011"
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+network = input('Введите адрес в формате: 10.1.1.0/24: ')
+octets = network.split('/')[0].split('.')
+mask = network.split('/')[1]
+mask_2 = "1" * int(mask) + "0" * 4
+
+print(net)
+ip_template = '''
+Network:
+{0:<8} {1:<8} {2:<8} {3:<8}
+{0:08b} {1:08b} {2:08b} {3:08b}
+
+Mask:
+/{4:<8}
+{9:<8} {10:<8} {11:<8} {12:<8} 
+{5:08} {6:08} {7:08} {8:08}
+'''
+
+print(ip_template.format(int(octets[0]), int(octets[1]), int(octets[2]), int(octets[3]), int(mask), int(mask_2[0:8]), int(mask_2[8:16]), int(mask_2[16:24]), int(mask_2[24:34]), int(mask_2[0:8], 2), int(mask_2[8:16], 2), int(mask_2[16:24], 2), int(mask_2[24:34], 2)))
