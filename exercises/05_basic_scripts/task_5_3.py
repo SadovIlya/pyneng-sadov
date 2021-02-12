@@ -63,3 +63,17 @@ trunk_template = [
     "switchport mode trunk",
     "switchport trunk allowed vlan {}",
 ]
+
+
+print(trunk_template[2].format('2'))
+
+interface_mode = 'access'
+interface_type = 'Fa0/6'
+vlans = '3'
+
+dicts = {
+'trunk':trunk_template,
+'access':access_template
+}
+
+print(dicts[interface_mode])
