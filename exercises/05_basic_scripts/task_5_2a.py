@@ -45,8 +45,8 @@ network = input('Введите адрес в формате: 10.1.1.0/24: ')
 octets = network.split('/')[0].split('.')
 mask = network.split('/')[1]
 mask_2 = "1" * int(mask) + "0" * 4
+print(bin(octets[2]))
 
-print(net)
 ip_template = '''
 Network:
 {0:<8} {1:<8} {2:<8} {3:<8}
