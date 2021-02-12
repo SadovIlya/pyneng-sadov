@@ -65,7 +65,7 @@ trunk_template = [
 ]
 
 
-print(trunk_template[2].format('2'))
+
 
 interface_mode = 'access'
 interface_type = 'Fa0/6'
@@ -76,4 +76,5 @@ dicts = {
 'access':access_template
 }
 
-print(dicts[interface_mode])
+#print(dicts[interface_mode])
+print(dicts['trunk'][2].format(vlans))
