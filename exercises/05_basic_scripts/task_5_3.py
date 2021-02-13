@@ -65,20 +65,14 @@ trunk_template = [
 ]
 
 
-
-
-
-
-interface_mode = 'access'
-interface_type = 'Fa0/6'
-vlans = '3'
+interface_mode = input("ведите режим работы интерфейса (access/trunk): ")
+interface_type = input("Введите тип и номер интерфейса: ")
+vlans = input("ведите номер влан(ов): ")
 
 dicts = {
 'trunk':trunk_template,
 'access':access_template
 }
 
-list_to_str = ('\n'.join(access_template))
-print(list_to_str.format(vlans))
-#print(dicts[interface_mode])
-#print(dicts[interface_mode][1].format(vlans))
+print(('\ninterface ' + interface_type+'\n' + '\n'.join(dicts[interface_mode])).format(vlans))
+
