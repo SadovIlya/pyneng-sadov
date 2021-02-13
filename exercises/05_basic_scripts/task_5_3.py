@@ -67,6 +67,8 @@ trunk_template = [
 
 
 
+
+
 interface_mode = 'access'
 interface_type = 'Fa0/6'
 vlans = '3'
@@ -76,5 +78,7 @@ dicts = {
 'access':access_template
 }
 
+list_to_str = ('\n'.join(access_template))
+print(list_to_str.format(vlans))
 #print(dicts[interface_mode])
-print(dicts['trunk'][2].format(vlans))
+#print(dicts[interface_mode][1].format(vlans))
