@@ -21,7 +21,7 @@ ip = '10.0.1.1'
 #ip = input('вод IP-адреса в формате 10.0.1.1: ')
 ip1 = ip.split('.')
 for element in ip1:
-    if int(element) int or element == 2:
+    if int(element) == 10 or element == 2:
         print('10 or 2')
 
 
