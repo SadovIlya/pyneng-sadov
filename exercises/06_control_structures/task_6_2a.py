@@ -17,12 +17,33 @@
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
-ip = '10.0.1.1'
-#ip = input('вод IP-адреса в формате 10.0.1.1: ')
+ip = input('Введите IP: ')
 ip1 = ip.split('.')
-for element in ip1:
-    if int(element) == 10 or element == 2:
-        print('10 or 2')
+#ip = input('вод IP-адреса в формате 10.0.1.1: ')
+
+correct = True
+
+if len(ip1) != 4:
+	correct = False
+else:
+	for element in ip1:
+		if not (element.isdigit() and int(element) in range(256)):
+			correct = False
+			break
+if correct == False:
+	print("Неправильный IP-адрес")
+else:
+	if int(ip1[0]) in range(1,224):
+		print('unicast')
+	elif int(ip1[0]) in range(224,240):
+		print('multicast')
+	elif ip == '255.255.255.255':
+		print('local broadcast')
+	elif ip == '0.0.0.0':
+		print('unassigned')
+	else:
+		print('unused')
+		
 
 
 
